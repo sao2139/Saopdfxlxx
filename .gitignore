@@ -1,0 +1,21 @@
+# --- Ignorar archivos compilados de Python ---
+__pycache__/
+*.pyc
+
+# --- Ignorar carpetas de construcción (Pesadas) ---
+build/
+dist/
+*.spec
+
+# --- Ignorar Instaladores Generados ---
+Installers/
+Output/
+
+# --- Ignorar Entornos Virtuales ---
+venv/
+env/
+.env
+
+# --- Ignorar archivos de sistema ---
+.DS_Store
+Thumbs.db
