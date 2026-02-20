@@ -17,20 +17,15 @@ class PDFExtractor:
         data = {}
         try:
             with pdfplumber.open(file_path) as pdf:
-                # Solo procesamos la primera página por eficiencia
                 page_obj = pdf.pages[0]
                 text = page_obj.extract_text() or ""
 
-                # Iteramos sobre los patrones definidos en settings.py
-                # 1. Nombre
                 match_nom = re.search(PATRONES_BUSQUEDA["nombre"], text, re.IGNORECASE)
                 data['Nombre'] = self._clean_text(match_nom.group(1)) if match_nom else "N/A"
 
-                # 2. Dirección (DOTALL permite saltos de línea)
                 match_dir = re.search(PATRONES_BUSQUEDA["direccion"], text, re.DOTALL | re.IGNORECASE)
                 data['Dirección'] = self._clean_text(match_dir.group(1)) if match_dir else "N/A"
 
-                # 3. Fecha
                 match_fecha = re.search(PATRONES_BUSQUEDA["fecha"], text)
                 data['Fecha'] = self._clean_text(match_fecha.group(1)) if match_fecha else "N/A"
 

@@ -38,6 +38,6 @@ El software se distribuye mediante un instalador ejecutable para sistemas Window
 Clonar el repositorio y establecer el entorno virtual:
 
 ```bash
-git clone [https://github.com/TU_USUARIO/SaoPdf_Enterprise.git](https://github.com/TU_USUARIO/SaoPdf_Enterprise.git)
+git clone [https://github.com/sao2139/Saopdfxlxx.git](https://github.com/sao2139/SaoPdf_Enterprise.git)
 cd SaoPdf_Enterprise
 pip install -r requirements.txt
